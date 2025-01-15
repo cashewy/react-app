@@ -29,7 +29,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <h1>
-        This is new shit i threw in
+        Test deployment using githubpages
       </h1>
     </>
   )
