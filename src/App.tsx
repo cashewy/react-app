@@ -1,38 +1,70 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import * as React from "react";
+import Button from "@mui/material/Button";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <h1>
-        suggested change test-branch to master
-      </h1>
-    </>
-  )
+    return (
+      <>
+        <Router>
+       <nav className="sticky-nav">
+                <Link to="/" className="nav-link">
+                    Home
+                </Link>
+                <Link to="/about" className="nav-link">
+                    About
+                </Link>
+                <Link to="/profile" className="nav-link">
+                    Profile
+                </Link>
+          </nav>
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <div>
+                            <Profile />
+                            <div>
+                                Test header for button
+                                <MyButton />
+                            </div>
+                            <div>Suggested change: test-branch to master</div>
+                        </div>
+                    }
+                />
+                <Route path="/about" element={<AboutPage />} />
+            </Routes>
+        </Router>
+        <Button variant="contained">Hello world</Button>
+      </>
+ 
+    );
 }
 
-export default App
+function MyButton() {
+    return (
+        <button onClick={() => console.log("Button clicked!")}>Click me</button>
+    );
+}
+
+function AboutPage() {
+    return (
+        <>
+            <h1>About Page</h1>
+            <p>This is the about page</p>
+        </>
+    );
+}
+
+function Profile() {
+    return (
+        <>
+            <img
+                src="https://i.imgur.com/MK3eW3As.jpg"
+                alt="Katherine Johnson"
+            />
+        </>
+    );
+}
+
+export default App;

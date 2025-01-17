@@ -1,42 +1,33 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+/* Sticky Navigation Bar */
+/* Sticky Navigation Bar at the Top */
+.sticky-nav {
+  position: sticky; /* Stick to the top of the viewport */
+  top: 0; /* Ensure it's at the top */
+  left: 0; /* Align to the left of the page */
+  right: 0; /* Stretch to the right of the page */
+  background-color: #333; /* Background color */
+  color: white; /* Text color */
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Center links horizontally */
+  padding: 10px 0; /* Space inside the navbar */
+  z-index: 1000; /* Keep the nav on top of other elements */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Links Styling */
+.nav-link {
+  margin: 0 15px; /* Space between links */
+  text-decoration: none; /* No underline */
+  color: white; /* Text color */
+  font-weight: bold;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-link:hover {
+  color: #61dafb; /* Change color on hover */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+/* Page Content Styling */
+.page-container {
+  margin-top: 20px; /* Add spacing below navbar */
+  padding: 0 20px; /* Add padding for page content */
 }
